@@ -10,6 +10,13 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
 app = Flask(__name__)
+# uncomment BELOW THING TOO if running first time
+# url = "http://qwone.com/~jason/20Newsgroups/20news-bydate.tar.gz"
+# response = requests.get(url)
+# with open("20news-19997.tar.gz", "wb") as f:
+    # f.write(response.content)
+# with tarfile.open("20news-19997.tar.gz", "r:gz") as tar:
+    # tar.extractall()
 # here add your 20news-bydate train or test folder 
 data_dir = "C:/Users/Fenil/OneDrive/Desktop/Sem 6/IRS/LAB 4/20news-bydate-test"
 df = load_data(data_dir)
