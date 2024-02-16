@@ -1,0 +1,59 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document Retrieval System</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1 class="mb-4">Document Retrieval System</h1>
+            <form action="/query" method="POST">
+                <div class="form-group">
+                    <label for="query">Enter Query:</label>
+                    <input type="text" class="form-control" id="query" name="query">
+                </div>
+                <div class="form-group">
+                    <label for="query_target">Enter Query Target:</label>
+                    <input type="text" class="form-control" id="query_target" name="query_target">
+                </div>
+                <div class="form-group">
+                    <label for="k">Enter Value for k:</label>
+                    <input type="number" class="form-control" id="k" name="k">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+            <!-- <h2 class="mt-5">Top K Documents:</h2>
+            <ul class="list-group">
+                {% for index in range(ranked_indices|length) %}
+                    <li class="list-group-item">Document {{ index+1 }}: {{ ranked_indices[index] }} - Similarity Score: {{ similarity_scores[index] }}</li>
+                {% endfor %}
+            </ul> -->
+
+            <h2 class="mt-5">Top K Documents:</h2>
+        <ul class="list-group">
+            {% for index in range(ranked_indices|length) %}
+         <li class="list-group-item">
+            Document {{ index+1 }}: {{ ranked_indices[index] }}
+            <a href="/view_document/{{ ranked_indices[index] }}">View Document</a>
+            - Similarity Score: {{ similarity_scores[index] }}
+        </li>
+    {% endfor %}
+</ul>
+
+
+            <h2 class="mt-5">Precision-Recall:</h2>
+            <p>Precision: {{ precision }}</p>
+            <p>Recall: {{ recall }}</p>
+        </body>
+        </html>
+        </div>
+        <!-- Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+    </html>
