@@ -16,22 +16,18 @@ To set up and run the application, follow these steps:
     ```bash
     git clone https://github.com/fenil210/Doc2VecIRS-News-Document-Indexing-and-Retrieval-System
     cd Doc2VecIRS-News-Document-Indexing-and-Retrieval-System
+     ```
 
-APP/
-│
-├── app.py
-│
-├── modules/
-│   ├── data_loader.py
-│   ├── doc2vec_trainer.py
-│   └── query_handler.py
-│
-├── templates/
-│   └── index.html
-│   └── view_document.html
-│
+📦 APP
+┣ 📜 app.py
+┣ 📂 modules
+┃ ┣ 📜 data_loader.py
+┃ ┣ 📜 doc2vec_trainer.py
+┃ ┗ 📜 query_handler.py
+┣ 📂 templates
+┃ ┣ 📜 index.html
+┃ ┗ 📜 view_document.html
 
-    ```
 
 2. **Create and Activate Virtual Environment:**
     ```bash
