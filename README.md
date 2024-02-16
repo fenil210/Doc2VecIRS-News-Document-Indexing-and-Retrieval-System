@@ -17,6 +17,7 @@ To set up and run the application, follow these steps:
     git clone https://github.com/fenil210/Doc2VecIRS-News-Document-Indexing-and-Retrieval-System
     cd Doc2VecIRS-News-Document-Indexing-and-Retrieval-System
      ```
+## project structure
 
 📦 APP
 ┣ 📜 app.py
