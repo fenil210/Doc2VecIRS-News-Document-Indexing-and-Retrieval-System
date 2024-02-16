@@ -10,7 +10,7 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
 app = Flask(__name__)
-
+# here add your 20news-bydate train or test folder 
 data_dir = "C:/Users/Fenil/OneDrive/Desktop/Sem 6/IRS/LAB 4/20news-bydate-test"
 df = load_data(data_dir)
 df['text'] = df['text'].apply(preprocess_text)
