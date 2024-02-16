@@ -89,7 +89,7 @@ To set up and run the application, follow these steps:
 
 ## Contributors
 
-- [Your Name](https://github.com/fenil210)
+- [Fenil](https://github.com/fenil210)
 
 ## License
 
