@@ -1,5 +1,9 @@
 import os
 import pandas as pd
+import re
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
 from gensim.parsing.preprocessing import preprocess_string, strip_tags, strip_numeric, strip_punctuation, strip_multiple_whitespaces
 
 def load_data(data_dir):
@@ -18,12 +22,18 @@ def load_data(data_dir):
 
 def preprocess_text(text):
     print("hey i am inside preprocess_text")
+    text = text.lower()
+    text = re.sub(r'<.*?>', '', text)
 
-    filters = [
-        lambda x: x.lower(),
-        strip_tags,
-        strip_numeric,
-        strip_punctuation,
-        strip_multiple_whitespaces
-    ]
-    return ' '.join(preprocess_string(text, filters=filters))
+#     text = re.sub(r'\d+', '', text)
+
+    text = re.sub(r'[^\w\s]', '', text)
+
+    stop_words = set(stopwords.words('english'))
+    words = word_tokenize(text)
+    filtered_words = [word for word in words if word not in stop_words]
+
+    lemmatizer = WordNetLemmatizer()
+    lemmatized_words = [lemmatizer.lemmatize(word) for word in filtered_words]
+
+    return ' '.join(lemmatized_words)
