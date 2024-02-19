@@ -41,7 +41,7 @@ To set up and run the application, follow these steps:
 
 3. **Install Dependencies:**
     ```
-    pip install Flask gensim pandas numpy scikit-learn numpy 
+    pip install Flask gensim pandas numpy scikit-learn numpy nltk
     ```
 
 4. **Run the Application:**
